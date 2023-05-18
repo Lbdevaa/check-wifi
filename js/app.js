@@ -9,7 +9,9 @@ window.addEventListener('load', async () => {
   }
 
   await loadPosts();
+});
 
+window.addEventListener('load', () => {
   const container = document.querySelector('#posts');
   if (navigator.connection) {
     const { effectiveType } = navigator.connection;
@@ -25,6 +27,15 @@ window.addEventListener('load', async () => {
     }
   }
 });
+
+if (navigator.connection) {
+  const { effectiveType } = navigator.connection;
+  if (effectiveType === 'wifi') {
+    console.log('Пользователь подключен к Wi-Fi');
+  } else if (effectiveType === 'cellular') {
+    console.log('Пользователь подключен к мобильному интернету');
+  }
+}
 
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', async () => {
@@ -43,7 +54,7 @@ async function loadPosts() {
   );
   const data = await res.json();
 
-  container.innerHTML = ``;
+  // container.innerHTML = ``;
 }
 
 function toCard(post) {
