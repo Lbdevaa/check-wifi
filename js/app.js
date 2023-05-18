@@ -1,7 +1,7 @@
 window.addEventListener('load', async () => {
   if ('serviceWorker' in navigator) {
     try {
-      const reg = await navigator.serviceWorker.register('/sw.js');
+      const reg = await navigator.serviceWorker.register('/check-wifi//sw.js');
       console.log('Service worker register success', reg);
     } catch (e) {
       console.log('Service worker register fail');
@@ -29,7 +29,7 @@ window.addEventListener('load', async () => {
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', async () => {
     try {
-      const reg = await navigator.serviceWorker.register('/sw.js');
+      const reg = await navigator.serviceWorker.register('/check-wifi//sw.js');
       console.log('Service worker registered!', reg);
     } catch (err) {
       console.log('Service worker registration failed:', err);
