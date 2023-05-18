@@ -9,7 +9,33 @@ window.addEventListener('load', async () => {
   }
 
   await loadPosts();
+
+  const container = document.querySelector('#posts');
+  if (navigator.connection) {
+    const { effectiveType } = navigator.connection;
+    container.textContent = `Тип соединения: ${effectiveType}`;
+  }
+
+  if (navigator.connection) {
+    const { effectiveType } = navigator.connection;
+    if (effectiveType === 'wifi') {
+      console.log('Пользователь подключен к Wi-Fi');
+    } else if (effectiveType === 'cellular') {
+      console.log('Пользователь подключен к мобильному интернету');
+    }
+  }
 });
+
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', async () => {
+    try {
+      const reg = await navigator.serviceWorker.register('/sw.js');
+      console.log('Service worker registered!', reg);
+    } catch (err) {
+      console.log('Service worker registration failed:', err);
+    }
+  });
+}
 
 async function loadPosts() {
   const res = await fetch(
@@ -17,11 +43,6 @@ async function loadPosts() {
   );
   const data = await res.json();
 
-  const container = document.querySelector('#posts');
-  if (navigator.connection) {
-    const { effectiveType } = navigator.connection;
-    container.textContent = `Тип соединения: ${effectiveType}`;
-  }
   container.innerHTML = ``;
 }
 
