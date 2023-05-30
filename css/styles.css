@@ -10,11 +10,6 @@ body {
 }
 
 nav {
-    height: 30px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
     background: #3a1a86;
     color: #fff;
     display: flex;
@@ -22,22 +17,15 @@ nav {
     align-items: center;
     box-shadow: 20px 3px 9px rgb(0 0 0 / 30%);
 }
-
-header {
-    height: 100px;
-    background: #5d30bf;
-    margin-top: 30px;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 1rem;
-}
+ 
 
 .container {
     max-width: 800px;
     margin: 0 auto;
     padding: 0 1rem;
+    display: flex;
+    min-height: 80vh;
+    align-items: center;
 }
 
 .card {
@@ -55,6 +43,9 @@ header {
 
 button{
     background-color: #3a1a86;
+    border: 0;
+    height: fit-content;
     color: #fff;
     border-radius: 5px;
+    margin: 10px auto;
 }
