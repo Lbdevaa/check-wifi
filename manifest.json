@@ -1,6 +1,6 @@
 {
-  "name": "PWA App",
-  "short_name": " PWA",
+  "name": "WIFI PWA",
+  "short_name": "WIFI PWA",
   "theme_color": "#3a1a86",
   "background_color": "#1a4f79",
   "display": "standalone",
@@ -27,5 +27,6 @@
       "sizes": "512x512",
       "type": "image/png"
     }
-  ]
+  ],
+  "description": "WIFI PWA"
 }

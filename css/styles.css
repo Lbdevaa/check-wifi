@@ -52,3 +52,9 @@ header {
     font-size: 1.2rem;
     text-transform: capitalize;
 }
+
+button{
+    background-color: #3a1a86;
+    color: #fff;
+    border-radius: 5px;
+}
